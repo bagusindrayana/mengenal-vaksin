@@ -142,6 +142,23 @@ body {
 }
 
 
+.fs-3 {
+    font-size: 1.25rem!important;
+}
+
+.fs-4 {
+    font-size: 1rem!important;
+}
+
+.mt-5 {
+    margin-top: 1.5rem!important;
+}
+
+.fs-1 {
+    font-size: 1.75rem!important;
+}
+
+
 /* responsive */
 @media only screen and (min-width: 600px) {
     /* For tablets: */
