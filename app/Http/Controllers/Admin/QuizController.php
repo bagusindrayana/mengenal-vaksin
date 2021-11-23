@@ -117,9 +117,23 @@ class QuizController extends Controller
         DB::beginTransaction();
         try {
             
+            $pilihan_benar = $quiz->pilihan_benar;
+           
+            $quiz->QuizPilihan()->delete();
+            foreach ($request->pilihan as $index => $pilihan) {
+                $pil = new QuizPilihan;
+                $pil->pilihan = $pilihan;
+                $pil->quiz_id = $quiz->id;
+                $pil->save();
+                if($index == (int)$request->pilihan_benar){
+                    $pilihan_benar = $pil->id;
+                }
+                
+            }
+            $quiz->vaksin_id = $request->vaksin_id;
             $quiz->soal = $request->soal;
+            $quiz->pilihan_benar = $pilihan_benar;
             $quiz->save();
-            
             DB::commit();
             return redirect()->route('quiz.index')->with('success','Data berhasil diubah');
         } catch (\Throwable $th) {

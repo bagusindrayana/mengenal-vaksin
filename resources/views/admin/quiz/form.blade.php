@@ -102,7 +102,7 @@
     <select name="vaksin_id" id="vaksin_id" class="form-control">
         <option value="">Pilih Vaksin</option>    
         @foreach ($vaksins as $vaksin)
-            <option value="{{ $vaksin->id }}">{{ $vaksin->nama_vaksin }}</option>
+            <option value="{{ $vaksin->id }}" @if (@$data->vaksin_id == $vaksin->id) selected @endif>{{ $vaksin->nama_vaksin }}</option>
         @endforeach
     </select>
 </div>
@@ -131,22 +131,41 @@
                 </tr>
             </thead>
             <tbody id="list-row">
-                <tr>
-                    <td>
-                        <input type="text" name="pilihan[]" class="form-control" placeholder="Pilihan...">
-                    </td>
-                    <td class="d-flex">
-                        <div class="form-check mx-3">
-                            <input class="form-check-input" type="radio" name="pilihan_benar" id="pilihan_benar1" value="0">
-                            <label class="form-check-label" for="pilihan_benar1">
-                              Jawaban Benar
-                            </label>
-                          </div>
-                        <button type="button" class="btn btn-danger btn-sm remove-row">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </td>
-                </tr>
+                @forelse (@$data->QuizPilihan ?? [] as $index => $item)
+                    <tr>
+                        <td>
+                            <input type="text" name="pilihan[]" class="form-control" placeholder="Pilihan..." value="{{ $item->pilihan }}">
+                        </td>
+                        <td class="d-flex">
+                            <div class="form-check mx-3">
+                                <input class="form-check-input" type="radio" @if ($data->pilihan_benar == $item->id) checked @endif name="pilihan_benar" id="pilihan_benar{{ $index+1 }}" value="{{ $index }}">
+                                <label class="form-check-label" for="pilihan_benar{{ $index+1 }}">
+                                Jawaban Benar
+                                </label>
+                            </div>
+                            <button type="button" class="btn btn-danger btn-sm remove-row">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td>
+                            <input type="text" name="pilihan[]" class="form-control" placeholder="Pilihan...">
+                        </td>
+                        <td class="d-flex">
+                            <div class="form-check mx-3">
+                                <input class="form-check-input" type="radio" name="pilihan_benar" id="pilihan_benar1" value="0">
+                                <label class="form-check-label" for="pilihan_benar1">
+                                Jawaban Benar
+                                </label>
+                            </div>
+                            <button type="button" class="btn btn-danger btn-sm remove-row">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                @endforelse
             </tbody>
             <tfoot>
                 <tr>
