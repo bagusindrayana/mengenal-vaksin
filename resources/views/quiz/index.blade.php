@@ -518,6 +518,11 @@
         
     @endif
     <div class="main-content mx-auto">
+        @if (session()->has('error'))
+            <div class="alert alret-danger p-2 bg-danger text-white">
+                {{ session()->get('error') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-md-2 text-start">
                 <a  href="{{ route('tentang-vaksin.index') }}" type="button" class="btn btn-warning text-white rounded-circle"><i class="fas fa-arrow-left"></i></a>
@@ -544,7 +549,7 @@
                             <div class="card-body">
                                 @foreach ($quiz->QuizPilihan as $pilihan)
                                     <div class="form-check mx-3">
-                                        <input class="form-check-input" type="radio" @if (isset($myAnswer) && $myAnswer[$quiz->id] == $pilihan->id)
+                                        <input class="form-check-input" type="radio" @if (old('pilihan['.$quiz->id.']') == $pilihan->id)
                                         checked
                                     @endif required name="pilihan[{{ $quiz->id }}]" id="pilihan_{{ $quiz->id }}_{{ $pilihan->id }}" value="{{ $pilihan->id }}">
                                         <label class="form-check-label" for="pilihan_{{ $quiz->id }}_{{ $pilihan->id }}">

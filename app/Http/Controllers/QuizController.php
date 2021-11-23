@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Quiz;
 use App\Models\Vaksin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class QuizController extends Controller
 {   
@@ -17,20 +18,27 @@ class QuizController extends Controller
 
     public function jawabAll(Request $request)
     {   
-        $quizs = Quiz::inRandomOrder()->get();
-        $jumlahSoal =count($quizs);
-        $myAnswer = $request->pilihan;
-        $correctAnswer = [];
-        $wrongAnswer = [];
-        foreach ($request->pilihan as $key => $value) {
-            $quiz = Quiz::find($key);
-            if($quiz->pilihan_benar == $value){
-                $correctAnswer[] = $quiz->id;
-            } else {
-                $wrongAnswer[] = $quiz->id;
+        DB::beginTransaction();
+        try {
+            $quizs = Quiz::inRandomOrder()->get();
+            $jumlahSoal =count($quizs);
+            $myAnswer = $request->pilihan;
+            $correctAnswer = [];
+            $wrongAnswer = [];
+            foreach ($request->pilihan as $key => $value) {
+                $quiz = Quiz::find($key);
+                if($quiz->pilihan_benar == $value){
+                    $correctAnswer[] = $quiz->id;
+                } else {
+                    $wrongAnswer[] = $quiz->id;
+                }
             }
+            $score = count($correctAnswer)/$jumlahSoal*100;
+            DB::commit();
+        } catch (\Throwable $th) {
+            DB::rollback();
+            return redirect()->back()->with('error', 'Jawaban kamu gagal terkirim :( : '.$th->getMessage())->withInput($request->all());
         }
-        $score = count($correctAnswer)/$jumlahSoal*100;
 
         return view('quiz.result',compact('quizs','correctAnswer','wrongAnswer','myAnswer','score'));
     }

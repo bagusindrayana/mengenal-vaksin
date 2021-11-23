@@ -11,12 +11,13 @@
     <meta name="description"
         content="AdminWrap Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>{{ env("APP_NAME") }}</title>
+    <title>{{ env('APP_NAME') }}</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/adminwrap-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <!-- Bootstrap Core CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link href="{{ asset('admin-assets/css/style.css') }}" rel="stylesheet">
     <!-- You can change the theme colors from here -->
@@ -28,7 +29,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-        @stack('styles')
+    @stack('styles')
 </head>
 
 <body class="fix-header card-no-border fix-sidebar">
@@ -38,7 +39,7 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">{{ env("APP_NAME") }}</p>
+            <p class="loader__label">{{ env('APP_NAME') }}</p>
         </div>
     </div>
     <!-- ============================================================== -->
@@ -60,7 +61,7 @@
                             <i class="fa fa-dashboard"></i>
                         </b>
                         <!--End Logo icon -->
-                        <!-- Logo text --><span>{{ env("APP_NAME") }}</span>
+                        <!-- Logo text --><span>{{ env('APP_NAME') }}</span>
                     </a>
                 </div>
                 <!-- ============================================================== -->
@@ -82,7 +83,8 @@
                                     class="fa fa-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search & enter"> <a
-                                    class="srh-btn"><i class="fa fa-times"></i></a> </form>
+                                    class="srh-btn"><i class="fa fa-times"></i></a>
+                            </form>
                         </li>
                     </ul>
                     <!-- ============================================================== -->
@@ -96,11 +98,11 @@
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-user"></i>
-                                <span
-                                    class="hidden-md-down">{{ Auth::user()->name }}</span> </a>
+                                <span class="hidden-md-down">{{ Auth::user()->name }}</span> </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li class="dropdown-item">
-                                    <a href="#" onclick="$('#logout').submit();"><i class="fa fa-sign-out"></i> Logout</a>
+                                    <a href="#" onclick="$('#logout').submit();"><i class="fa fa-sign-out"></i>
+                                        Logout</a>
                                 </li>
                                 <form action="{{ route('login.logout') }}" id="logout" class="d-none">
                                     @csrf
@@ -123,19 +125,26 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="{{ route('admin.index') }}" aria-expanded="false"><i
-                                    class="fa fa-home"></i><span class="hide-menu">Dashboard</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{ route('admin.index') }}"
+                                aria-expanded="false"><i class="fa fa-home"></i><span
+                                    class="hide-menu">Dashboard</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="{{ route('vaksin.index') }}" aria-expanded="false"><i
-                                    class="fa fa-medkit"></i><span class="hide-menu">Vaksin</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{ route('vaksin.index') }}"
+                                aria-expanded="false"><i class="fa fa-medkit"></i><span
+                                    class="hide-menu">Vaksin</span></a>
                         </li>
 
-                        <li> <a class="waves-effect waves-dark" href="{{ route('quiz.index') }}" aria-expanded="false"><i
-                            class="fa fa-question-circle"></i><span class="hide-menu">Quiz</span></a>
-                </li>
-                        
+                        <li> <a class="waves-effect waves-dark" href="{{ route('quiz.index') }}"
+                                aria-expanded="false"><i class="fa fa-question-circle"></i><span
+                                    class="hide-menu">Quiz</span></a>
+
+                        <li> <a class="waves-effect waves-dark" href="{{ route('admin.curhat.index') }}"
+                                aria-expanded="false"><i class="fa fa-files-o"></i><span
+                                    class="hide-menu">Curhat</span></a>
+                        </li>
+
                     </ul>
-              
+
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
@@ -174,7 +183,8 @@
                 <!-- .right-sidebar -->
                 <div class="right-sidebar">
                     <div class="slimscrollright">
-                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span>
+                        <div class="rpanel-title"> Service Panel <span><i
+                                    class="ti-close right-side-toggle"></i></span>
                         </div>
                         <div class="r-panel-body">
                             <ul id="themecolors" class="mt-3">
@@ -254,7 +264,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer"> © 2021 {{ env("APP_NAME") }} </footer>
+            <footer class="footer"> © 2021 {{ env('APP_NAME') }} </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -269,9 +279,12 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
     <!-- slimscrollbar scrollbar JavaScript -->
     <script src="{{ asset('admin-assets/js/perfect-scrollbar.jquery.min.js') }}"></script>
     <!--Wave Effects -->

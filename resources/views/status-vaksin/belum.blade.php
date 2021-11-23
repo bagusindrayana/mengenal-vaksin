@@ -27,7 +27,7 @@
             
             </div>
             <div class="col-md-2 text-start align-middle">
-                <a href="curhat.html" class="btn btn-success my-2 fs-5 d-inline-block align-middle">Curhat</a>    
+                <a href="{{ route('curhat.index') }}" class="btn btn-success my-2 fs-5 d-inline-block align-middle">Curhat</a>    
             </div>
         </div>
         <div class="row mt-4 animate__animated animate__fadeInUp">

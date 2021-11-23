@@ -26,6 +26,8 @@ Route::get('/quiz-vaksin',\App\Http\Controllers\QuizController::class.'@index')-
 Route::post('/quiz-vaksin',\App\Http\Controllers\QuizController::class.'@jawabAll')->name('quiz-vaksin.jawab-all');
 Route::get('/quiz-vaksin/{slug}',\App\Http\Controllers\QuizController::class.'@show')->name('quiz-vaksin.show');
 Route::post('/quiz-vaksin/{slug}',\App\Http\Controllers\QuizController::class.'@jawab')->name('quiz-vaksin.jawab');
+Route::get('/curhat',\App\Http\Controllers\CurhatController::class.'@index')->name('curhat.index');
+Route::post('/curhat',\App\Http\Controllers\CurhatController::class.'@store')->name('curhat.store');
 
 Route::get('/login',\App\Http\Controllers\LoginController::class.'@index')->name('login.index');
 Route::post('/login',\App\Http\Controllers\LoginController::class.'@auth')->name('login.auth');
@@ -35,4 +37,5 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
     Route::get('/',\App\Http\Controllers\Admin\DashboardController::class.'@index')->name('admin.index');
     Route::resource('vaksin',\App\Http\Controllers\Admin\VaksinController::class)->except(['show']);
     Route::resource('quiz',\App\Http\Controllers\Admin\QuizController::class)->except(['show']);
+    Route::get('/curhat',\App\Http\Controllers\Admin\CurhatController::class.'@index')->name('admin.curhat.index');
 });
