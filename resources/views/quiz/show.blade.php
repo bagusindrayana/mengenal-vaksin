@@ -4,6 +4,9 @@
     <script>
         function closeAlert() {
             document.getElementById("container-alert").classList.add("animate__fadeOut");
+            setTimeout(() => {
+                document.getElementById("container-alert").style.display = "none"; 
+            }, 1000);
         }
     </script>
 @endpush
