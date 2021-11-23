@@ -542,7 +542,7 @@
                         Skor : 
                     </div>
                     <div class="col-6 text-start">
-                        {{ $score }}
+                        {{ round($score, 2) }}
                     </div>
                 </div>
                 <div class="row">
