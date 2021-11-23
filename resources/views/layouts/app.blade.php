@@ -12,85 +12,6 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
     @stack('styles')
 
-    <style>
-        #open-menu {
-            position: fixed;
-            top: 25px;
-            right: 0;
-            background: rgb(5, 112, 201);
-            height: 100px;
-            width: 100px;
-            border-radius: 50%;
-            color: white;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            transition: all ease-in-out 0.5s;
-            z-index: 9999;
-        }
-
-        #open-menu:hover {
-            cursor: pointer;
-            /* transform: translateX(100%); */
-        }
-
-        /* #open-menu:hover + #float-menu {
-            transform: translateX(0%);
-        } */
-
-        #float-menu {
-            position: fixed;
-            top: 25px;
-            right: 0;
-            background: rgb(5, 112, 201);
-            border-top-left-radius: 50px;
-            border-bottom-left-radius: 50px;
-            min-width: 200px;
-            height: 100px;
-            color: white;
-            box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.10);
-            transform: translateX(100%);
-            transition: all ease-in-out 0.5s;
-            z-index: 9999;
-            
-        }
-
-        /* #float-menu:hover {
-            transform: translateX(0%);
-        } */
-
-  
-
-        #float-menu ul {
-            list-style: none;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            height: 100%;
-            
-        }
-
-        #float-menu ul li {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            width: calc(100% - 10px);
-            height: 50px;
-            margin-right: 10px;
-        }
-
-        #float-menu ul li a{
-            text-decoration: none;
-            color: white;
-            
-        }
-
-        #float-menu ul li a i,#float-menu ul li a span{
-            display: inline-block;
-            
-        }
-
-    </style>
 </head>
 <body onload="hideLoading()">
     <div class="loading-wrapper" id="main-loading">
@@ -102,7 +23,7 @@
     </div>
 
     <div id="open-menu">
-        <i class="fas fa-compass fa-4x"></i>
+        <i class="fas fa-compass"></i>
     </div>
 
     <div id="float-menu">
@@ -111,7 +32,7 @@
             <li>
                 <a href="{{ url('/') }}" title="Beranda">
  
-                   <i class="fas fa-home fa-2x"></i>
+                   <i class="fas fa-home"></i>
                 </a>
 
             </li>
@@ -119,14 +40,14 @@
                 
                 <a href="{{ url('/tentang-vaksin#jenis-vaksin') }}" title="Macam-Macam Vaksin">
 
-                    <i class="fas fa-medkit fa-2x"></i>
+                    <i class="fas fa-medkit"></i>
                 </a>
             </li>
             <li>
                 
                 <a href="{{ url('/quiz-vaksin') }}" title="Quiz Vaksinasi">
 
-                    <i class="fas fa-spell-check fa-2x"></i>
+                    <i class="fas fa-spell-check"></i>
                 </a>
             </li>
          
@@ -159,7 +80,7 @@
             }
             document.getElementById("open-menu").style.transform = "translateX(0%)";
             document.getElementById("float-menu").style.transform = "translateX(100%)";
-            console.log("open-menu");
+            
         }
 
         document.getElementById("open-menu").onmouseover = function() {mouseOver1()};

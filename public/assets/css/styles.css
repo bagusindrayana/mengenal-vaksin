@@ -75,7 +75,7 @@ body {
     background-color: #fff;
     opacity: 1;
     position: fixed;
-    z-index: 999;
+    z-index: 1001;
     margin: 0;
     padding: 0;
     top: 0;
@@ -158,6 +158,86 @@ body {
     font-size: 1.75rem!important;
 }
 
+#open-menu {
+    position: fixed;
+    top: 17px;
+    right: 10px;
+    background: rgb(5, 112, 201);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    transition: all ease-in-out 0.5s;
+    font-size: 2.5em;
+    z-index: 999;
+}
+
+#open-menu:hover {
+    cursor: pointer;
+    /* transform: translateX(100%); */
+}
+
+/* #open-menu:hover + #float-menu {
+    transform: translateX(0%);
+} */
+
+#float-menu {
+    position: fixed;
+    top: 17px;
+    right: 0;
+    background: rgb(5, 112, 201);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    min-width: 200px;
+    height: 50px;
+    color: white;
+    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.10);
+    transform: translateX(100%);
+    transition: all ease-in-out 0.5s;
+    z-index: 1000;
+    
+}
+
+/* #float-menu:hover {
+    transform: translateX(0%);
+} */
+
+
+
+#float-menu ul {
+    list-style: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    
+}
+
+#float-menu ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 10px);
+    height: 50px;
+    margin-right: 10px;
+}
+
+#float-menu ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px !important;
+    
+}
+
+#float-menu ul li a i {
+    font-size: 14px !important;
+}
+
+
+
 
 /* responsive */
 @media only screen and (min-width: 600px) {
@@ -226,6 +306,8 @@ body {
     .curhat-section .text-end {
         text-align: right!important;
     }
+
+    
 }
 
 @media only screen and (min-width: 1281px) {
@@ -289,6 +371,51 @@ body {
     .curhat-section .text-end {
         text-align: right!important;
     }
+
+    #open-menu {
+        top: 25px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        font-size: 5em !important;
+       
+    }
+
+    #open-menu:hover {
+        cursor: pointer;
+        /* transform: translateX(100%); */
+    }
+
+    #float-menu {
+        position: fixed;
+        top: 25px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        min-width: 250px;
+        height: 100px;
+        
+    }
+
+    
+
+    #float-menu ul li {
+        width: calc(100% - 10px);
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    #float-menu ul li a {
+        font-size: 24px !important;
+    }
+
+    #float-menu ul li a i {
+        font-size: 24px !important;
+    }
+
+    
+
+
+
 }
 
 .gambar-vaksin {
@@ -306,4 +433,13 @@ body {
 
 .btn-warning {
     background-color: #fed602;
+}
+
+
+.text-success {
+    color: #32a932 !important;
+}
+
+.btn-success,.bg-success {
+    background-color: #32a932 !important;
 }
