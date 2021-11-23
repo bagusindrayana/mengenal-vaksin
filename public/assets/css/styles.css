@@ -151,6 +151,69 @@ body {
 @media only screen and (min-width: 768px) {
     /* For desktop: */
     .gambar-dokter {
+        width: 300px;
+        margin: unset;
+        display: unset;
+    }
+
+    .gambar-virus {
+        width: 300px;
+        margin: unset;
+        display: unset;
+    }
+
+    .row h1 {
+        font-size: 2rem;
+    }
+
+    .right-side,.left-side {
+        padding-top: 3.5rem;
+    }
+
+    .main-content {
+        margin-top: 3rem!important;
+        margin-bottom: 6rem!important;
+        padding: 2rem!important;
+        width: 85%;
+        min-height: 70vh;
+    }
+
+    .fs-3 {
+        font-size: 1.5rem!important;
+    }
+
+    .fs-4 {
+        font-size: 1.25rem!important;
+    }
+
+    .mt-5 {
+        margin-top: 2rem!important;
+    }
+
+    .fs-1 {
+        font-size: 2.25rem!important;
+    }
+
+    .question-section {
+        text-align: right!important;
+    }
+
+    .button-section {
+        text-align: left!important;
+    }
+
+    .curhat-section .text-start {
+        text-align: left!important;
+    }
+    
+    .curhat-section .text-end {
+        text-align: right!important;
+    }
+}
+
+@media only screen and (min-width: 1281px) {
+    /* For desktop: */
+    .gambar-dokter {
         width: 400px;
         margin: unset;
         display: unset;
@@ -176,6 +239,22 @@ body {
         padding: 3rem!important;
         width: 85%;
         min-height: 70vh;
+    }
+
+    .fs-3 {
+        font-size: 1.75rem!important;
+    }
+
+    .fs-4 {
+        font-size: 1.5rem!important;
+    }
+
+    .mt-5 {
+        margin-top: 3rem!important;
+    }
+
+    .fs-1 {
+        font-size: 2.5rem!important;
     }
 
     .question-section {
