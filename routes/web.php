@@ -22,6 +22,8 @@ Route::get('/sudah-vaksin',\App\Http\Controllers\StatusVaksinController::class.'
 Route::get('/belum-vaksin',\App\Http\Controllers\StatusVaksinController::class.'@belum')->name('belum-vaksin');
 Route::get('/tentang-vaksin',\App\Http\Controllers\TentangVaksinController::class.'@index')->name('tentang-vaksin.index');
 Route::get('/tentang-vaksin/{slug}',\App\Http\Controllers\TentangVaksinController::class.'@show')->name('tentang-vaksin.show');
+Route::get('/quiz-vaksin',\App\Http\Controllers\QuizController::class.'@index')->name('quiz-vaksin.index');
+Route::post('/quiz-vaksin',\App\Http\Controllers\QuizController::class.'@jawabAll')->name('quiz-vaksin.jawab-all');
 Route::get('/quiz-vaksin/{slug}',\App\Http\Controllers\QuizController::class.'@show')->name('quiz-vaksin.show');
 Route::post('/quiz-vaksin/{slug}',\App\Http\Controllers\QuizController::class.'@jawab')->name('quiz-vaksin.jawab');
 

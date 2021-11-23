@@ -19,13 +19,11 @@
             <div class="col-md-6  mx-auto">
                 {!! $vaksin->deskripsi_vaksin !!}
                 <br>
-                <p class="text-success fw-bold">Yuk Uji Pemahamanmu Tentang Vaksin Ini</p>
-                <a href="{{ route('quiz-vaksin.show',$vaksin->slug) }}" class="btn btn-primary rounded-pill">
-                    Masuk Quiz <i class="far fa-question-circle"></i>
+                {{-- <p class="text-success fw-bold">Yuk Uji Pemahamanmu Tentang Vaksin Ini</p> --}}
+                <a href="{{ url('tentang-vaksin#jenis-vaksin') }}" class="btn btn-success rounded-pill px-4">
+                    Jenis Vaksin Lainnya <i class="fas fa-medkit"></i>
                 </a>
             </div>
         </div>
-
-     
     </div>
 @endsection
