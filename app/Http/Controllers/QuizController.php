@@ -18,6 +18,7 @@ class QuizController extends Controller
     {
         $vaksin = Vaksin::with('Quiz')->where('slug',$slug)->first();
         $jumlahSoal = $vaksin->quiz->count();
+        $myAnswer = $request->pilihan;
         $correctAnswer = [];
         $wrongAnswer = [];
         foreach ($request->pilihan as $key => $value) {
@@ -35,6 +36,6 @@ class QuizController extends Controller
         //     echo "salah";
         // }
 
-        return view('quiz.show',compact('vaksin','correctAnswer','wrongAnswer'));
+        return view('quiz.show',compact('vaksin','correctAnswer','wrongAnswer','myAnswer'));
     }
 }
