@@ -100,7 +100,7 @@
 <div class="form-group">
     <label for="vaksin_id">Vaksin</label>
     <select name="vaksin_id" id="vaksin_id" class="form-control">
-        <option value="">Pilih Vaksin</option>    
+        <option value="">Semua Vaksin</option>    
         @foreach ($vaksins as $vaksin)
             <option value="{{ $vaksin->id }}" @if (@$data->vaksin_id == $vaksin->id) selected @endif>{{ $vaksin->nama_vaksin }}</option>
         @endforeach

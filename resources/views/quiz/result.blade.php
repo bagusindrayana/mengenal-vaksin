@@ -574,7 +574,7 @@
         <div class="row my-5">
             <div class="col-md-12 text-center">
                 <a href="#result" class="btn btn-primary rounded-pill fs-3 px-5">
-                    Lihat Jawaban Quiz <i class="far fa-arrow-down"></i>
+                    Lihat Jawaban Quiz <i class="fas fa-arrow-down"></i>
                 </a>
             </div>
         </div>

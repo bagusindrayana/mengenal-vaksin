@@ -115,7 +115,7 @@
         <div class="row my-5">
             <div class="col-md-12 text-center">
                 <a href="{{ route('quiz-vaksin.index') }}" class="btn btn-primary rounded-pill fs-3 px-5">
-                    Masuk Quiz <i class="far fa-question-circle"></i>
+                    Masuk Quiz <i class="fas fa-question-circle"></i>
                 </a>
             </div>
         </div>

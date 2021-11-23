@@ -38,12 +38,18 @@ class QuizController extends Controller
     public function show($slug)
     {
         $vaksin = Vaksin::with('Quiz')->where('slug',$slug)->first();
+        if(!$vaksin){
+            abort(404);
+        }
         return view('quiz.show',compact('vaksin'));
     }
 
     public function jawab(Request $request,$slug)
     {
         $vaksin = Vaksin::with('Quiz')->where('slug',$slug)->first();
+        if(!$vaksin){
+            abort(404);
+        }
         $jumlahSoal = $vaksin->quiz->count();
         $myAnswer = $request->pilihan;
         $correctAnswer = [];
