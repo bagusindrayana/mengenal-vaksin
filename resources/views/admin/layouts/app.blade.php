@@ -98,7 +98,14 @@
                                 <i class="fa fa-user"></i>
                                 <span
                                     class="hidden-md-down">{{ Auth::user()->name }}</span> </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li class="dropdown-item">
+                                    <a href="#" onclick="$('#logout').submit();"><i class="fa fa-sign-out"></i> Logout</a>
+                                </li>
+                                <form action="{{ route('login.logout') }}" id="logout" class="d-none">
+                                    @csrf
+                                </form>
+                            </ul>
                         </li>
                     </ul>
                 </div>
