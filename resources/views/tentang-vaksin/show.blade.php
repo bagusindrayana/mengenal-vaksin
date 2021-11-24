@@ -4,7 +4,7 @@
     <div class="main-content mx-auto">
         <div class="row">
             <div class="col-md-2 text-start">
-                <a  href={{ route('tentang-vaksin.index') }} type="button" class="btn btn-warning text-white rounded-circle"><i class="fas fa-arrow-left"></i></a>
+                <a  href="{{ route('tentang-vaksin.index') }}" type="button" class="btn btn-warning text-white rounded-circle"><i class="fas fa-arrow-left"></i></a>
             </div>
         </div>
         <div class="row mb-3 mt-5">

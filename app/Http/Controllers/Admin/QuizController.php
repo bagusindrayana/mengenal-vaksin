@@ -71,7 +71,7 @@ class QuizController extends Controller
             return redirect()->route('quiz.index')->with('success','Data berhasil ditambahkan');
         } catch (\Throwable $th) {
             DB::rollback();
-            return redirect()->back()->with('error','Data gagal ditambahkan : '.$th->getMessage());
+            return redirect()->back()->with('error','Data gagal ditambahkan : '.$th->getMessage())->withInpus($request->all());
         }
 
         
@@ -138,7 +138,7 @@ class QuizController extends Controller
             return redirect()->route('quiz.index')->with('success','Data berhasil diubah');
         } catch (\Throwable $th) {
             DB::rollback();
-            return redirect()->back()->with('error','Data gagal diubah : '.$th->getMessage());
+            return redirect()->back()->with('error','Data gagal diubah : '.$th->getMessage())->withInpus($request->all());
         }
         
         

@@ -143,6 +143,13 @@
                                     class="hide-menu">Curhat</span></a>
                         </li>
 
+                        <li> 
+                            <a class="waves-effect waves-dark" href="{{ route('informasi.index') }}" aria-expanded="false">
+                                <i class="fa fa-info-circle"></i>
+                                <span class="hide-menu">Informasi</span>
+                            </a>
+                        </li>
+
                     </ul>
 
                 </nav>

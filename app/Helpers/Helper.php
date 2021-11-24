@@ -1,6 +1,8 @@
 <?php
 namespace App\Helpers;
 
+use App\Models\Informasi;
+
 class Helper {
 
     public static function get_client_ip() {
@@ -26,6 +28,11 @@ class Helper {
     public static function get_user_agent()
     {
         return $_SERVER['HTTP_USER_AGENT'];
+    }
+
+    public static function getHoax()
+    {
+        return Informasi::where('jenis_informasi','Hoax')->get();
     }
 
 }
