@@ -67,16 +67,11 @@
             $.each($(itemsToWrap), function(index) {
                 var html = `<div class="col-md-4 mb-5">`+$(this).html()+`</div>`;
                 $(this).find('.card').removeAttr('data-aos');
-                if(no < 3){
-                    elementTowrap += html;
-                    no ++;
-                    if(index == $(itemsToWrap).length - 1){
-                        elementTowrap += '</div></div>';
-                    }
-                } else {
-                    // elementTowrap += html;
-                    elementTowrap += '</div></div><div class="carousel-item"><div class="row">'
+                elementTowrap += html;
+                no++;
+                if(no == 3){
                     no = 0;
+                    elementTowrap += '</div></div><div class="carousel-item"><div class="row">'
                 }
                 
             });
@@ -172,6 +167,21 @@
                 <div class="row parent-slider">
 
                     @foreach ($vaksins as $vaksin)
+                        <div class="col-md-4 mb-5 slider-item">
+                            <div class="card " data-aos="flip-left">
+                                <div class="card-img-top gambar-vaksin"
+                                    style="background-image: url('{{ $vaksin->gambar_vaksin ?? '/assets/img/daniel-schludi-ZeMRI9vO71o-unsplash.jpg' }}');">
+                                    <!-- <img src="" alt="..."> -->
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $vaksin->nama_vaksin }}</h5>
+                                    <p class="card-text">
+                                        {{ mb_strimwidth(strip_tags($vaksin->deskripsi_vaksin), 0, 150, '...') }}</p>
+                                    <a href="{{ route('tentang-vaksin.show', $vaksin->slug) }}"
+                                        class="btn btn-primary">Selengkapnya</a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-4 mb-5 slider-item">
                             <div class="card " data-aos="flip-left">
                                 <div class="card-img-top gambar-vaksin"
