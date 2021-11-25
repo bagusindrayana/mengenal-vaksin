@@ -1,5 +1,21 @@
 @extends('layouts.app')
 
+@push('styles')
+    <style>
+        .carousel-control-prev-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230570c9' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+        }
+
+        .carousel-control-next-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230570c9' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+        }
+
+        .carousel-control-next, .carousel-control-prev {
+            width: auto !important;
+        }
+    </style>
+@endpush
+
 @push('scripts')
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
@@ -9,10 +25,8 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
     </script>
     <script>
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            var itemsToWrap = $('.slider-item');
-            $('.parent-slider').remove();
-            var carousel = `<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        var itemsToWrap = $('.slider-item');
+        var carousel = `<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 
             </div>
@@ -25,6 +39,10 @@
                 <span class="visually-hidden">Next</span>
             </button>
             </div>`;
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            
+            $('.parent-slider').remove();
+           
             $(carousel).appendTo('.baseParent');
             var elementTowrap = "";
             $.each($(itemsToWrap), function(index) {
@@ -39,8 +57,28 @@
             $('#myCarousel .carousel-inner').append($(elementTowrap));
             var myCarousel = document.querySelector('#myCarousel')
             var c = new bootstrap.Carousel(myCarousel)
-            // $("#myCarousel").carousel("pause").removeData();
-            //$("#myCarousel").carousel();
+            
+        } else {
+            $('.parent-slider').remove();
+           
+            $(carousel).appendTo('.baseParent');
+            var elementTowrap = '<div class="carousel-item active"><div class="row">';
+            var no = 0;
+            $.each($(itemsToWrap), function(index) {
+                var html = `<div class="col-md-4 mb-5">`+$(this).html()+`</div>`;
+                $(this).find('.card').removeAttr('data-aos');
+                if(no < 3){
+                    elementTowrap += html;
+                    no ++;
+                } else {
+                    elementTowrap += '</div></div><div class="carousel-item"><div class="row">'
+                    no = 0;
+                }
+                
+            });
+            $('#myCarousel .carousel-inner').append($(elementTowrap));
+            var myCarousel = document.querySelector('#myCarousel')
+            var c = new bootstrap.Carousel(myCarousel)
         }
     </script>
 @endpush
