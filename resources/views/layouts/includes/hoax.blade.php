@@ -42,7 +42,7 @@
     <div class="row my-5">
 
         <div class="col-md-4 text-center my-4">
-            <a href="https://www.kominfo.go.id/" target="_blank" class="btn btn-primary rounded-pill fs-1 px-4">
+            <a href="https://www.kominfo.go.id/search?search=Vaksin" target="_blank" class="btn btn-primary rounded-pill fs-1 px-4">
                 Kominfo
             </a>
 
@@ -56,7 +56,7 @@
         </div>
         <div class="col-md-4 text-center my-4">
 
-            <a href="https://turnbackhoax.id/" class="btn btn-primary rounded-pill fs-1 px-4" target="_blank">
+            <a href="https://turnbackhoax.id/?s=Vaksin" class="btn btn-primary rounded-pill fs-1 px-4" target="_blank">
                 Turnbackhoax
             </a>
         </div>

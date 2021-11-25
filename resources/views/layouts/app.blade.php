@@ -14,7 +14,7 @@
     @stack('styles')
 
 </head>
-<body onload="hideLoading()">
+<body >
     <div class="loading-wrapper" id="main-loading">
         <div class="loading">
             <div class="line"></div>
@@ -60,13 +60,15 @@
     @yield('content')
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-        function hideLoading() {
+        $(document).ready(function(){
+            AOS.init();
             document.getElementById("main-loading").classList.add('hide'); 
             setTimeout(() => {
                 document.getElementById("main-loading").style.display = "none"; 
             }, 1000);
-        }
+        });
 
         var openMenu = false;
 
@@ -96,12 +98,8 @@
             document.getElementById("float-menu").style.transform = "translateX(0%)";
             document.getElementById("open-menu").style.transform = "translateX(100%)";
         }
-
     </script>
-    <script>
-        AOS.init();
-    </script>
-
+    
     @stack('scripts')
 </body>
 </html>
