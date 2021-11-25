@@ -64,6 +64,7 @@
             $(carousel).appendTo('.baseParent');
             var elementTowrap = '<div class="carousel-item active"><div class="row">';
             var no = 0;
+            
             $.each($(itemsToWrap), function(index) {
                 var html = `<div class="col-md-4 mb-5">`+$(this).html()+`</div>`;
                 $(this).find('.card').removeAttr('data-aos');
@@ -71,7 +72,12 @@
                 no++;
                 if(no == 3){
                     no = 0;
-                    elementTowrap += '</div></div><div class="carousel-item"><div class="row">'
+                    
+                    if(index == $(itemsToWrap).length - 1){
+                        elementTowrap += '</div></div>';
+                    } else {
+                        elementTowrap += '</div></div><div class="carousel-item"><div class="row">';
+                    }
                 }
                 
             });
@@ -182,7 +188,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                     @endforeach
 
                 </div>
