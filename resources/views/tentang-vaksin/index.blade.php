@@ -70,6 +70,9 @@
                 if(no < 3){
                     elementTowrap += html;
                     no ++;
+                    if(index == $(itemsToWrap).length - 1){
+                        elementTowrap += '</div></div>';
+                    }
                 } else {
                     elementTowrap += '</div></div><div class="carousel-item"><div class="row">'
                     no = 0;
