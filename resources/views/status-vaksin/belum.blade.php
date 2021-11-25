@@ -46,40 +46,5 @@
         </div>
     </div>
 
-    <div class="main-content mx-auto" id="waspada-hoax" style="background-image: url('{{ asset('assets/img/wave_red.svg') }}')">
-        <div class="row mb-3">
-            <div class="col-md-4 text-center mx-auto bg-danger p-1 rounded">
-                <div class="bg-white p-1 rounded text-white">
-                    <div class="bg-danger p-5 rounded text-white">
-                        <h1 class="fs-1 fw-bold">WASPADA HOAX</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mb-4">
-            <div class="col-md-6 mx-auto text-center">
-                <p class="fs-3 text-danger fw-bold">Berita Hoax Atau Berita Palsu Yang Menyesatkan</p>
-            </div>
-        </div>
-
-        <div class="row ">
-            
-            @foreach (Helper::getHoax() as $hoax)
-                <div class="col-md-4 mb-5">
-                    <div class="card " data-aos="flip-left">
-                        <div class="card-img-top gambar-vaksin" style="background-image: url('{{ $hoax->gambar_informasi ?? '/assets/img/daniel-schludi-ZeMRI9vO71o-unsplash.jpg' }}');">
-                            <!-- <img src="" alt="..."> -->
-                        </div>
-                        <div class="card-body">
-                        <h5 class="card-title">{{ $hoax->nama_informasi }}</h5>
-                        <p class="card-text">{{ mb_strimwidth(strip_tags($hoax->isi_informasi),0,150,"...") }}</p>
-                        <a href="{{ route('informasi.show',$hoax->slug) }}" class="btn btn-danger">Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-
-        </div>
-        
-    </div>
+    @include('layouts.includes.hoax')
 @endsection

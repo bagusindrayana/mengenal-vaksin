@@ -8,12 +8,13 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh;
     height: 100%;
+    font-family: "Balsamiq Sans", sans-serif;
 }
 
 .main-content {
     display: block;
     background-image: url('../img/wave.svg');
-    background-size:auto 450px ;
+    background-size:auto 50% ;
     background-repeat: no-repeat;
     background-position:  bottom;
     top: 0;
@@ -237,6 +238,19 @@ body {
 }
 
 
+.gambar-kanan {
+    text-align: center;
+}
+
+.gambar-kiri {
+    text-align: center;
+}
+
+#waspada-hoax .py-5 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
 
 
 /* responsive */
@@ -307,6 +321,20 @@ body {
         text-align: right!important;
     }
 
+    .gambar-kanan {
+        text-align: right !important;
+    }
+    
+    .gambar-kiri {
+        text-align: left !important;
+    }
+
+    .py-5 {
+        padding-top: 3rem!important;
+        padding-bottom: 3rem!important;
+    }
+
+    
     
 }
 
@@ -443,3 +471,4 @@ body {
 .btn-success,.bg-success {
     background-color: #32a932 !important;
 }
+

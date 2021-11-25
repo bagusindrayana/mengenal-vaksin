@@ -606,7 +606,7 @@
                                         <input readonly class="form-check-input" type="radio" @if (isset($myAnswer) && $myAnswer[$quiz->id] == $pilihan->id)
                                         checked
                                     @endif required name="pilihan[{{ $quiz->id }}]" id="pilihan_{{ $quiz->id }}_{{ $pilihan->id }}" value="{{ $pilihan->id }}">
-                                        <label class="form-check-label" for="pilihan_{{ $quiz->id }}_{{ $pilihan->id }}">
+                                        <label class="form-check-label" aria-disabled="true" for="pilihan_{{ $quiz->id }}_{{ $pilihan->id }}">
                                             {{ $pilihan->pilihan }}
                                         </label>
                                     </div>
