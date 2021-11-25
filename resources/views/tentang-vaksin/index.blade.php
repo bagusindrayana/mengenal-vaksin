@@ -74,7 +74,7 @@
                         elementTowrap += '</div></div>';
                     }
                 } else {
-                    elementTowrap += html;
+                    // elementTowrap += html;
                     elementTowrap += '</div></div><div class="carousel-item"><div class="row">'
                     no = 0;
                 }
