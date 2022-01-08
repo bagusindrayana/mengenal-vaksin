@@ -129,6 +129,12 @@
                                 aria-expanded="false"><i class="fa fa-home"></i><span
                                     class="hide-menu">Dashboard</span></a>
                         </li>
+                        <li> 
+                            <a class="waves-effect waves-dark" href="{{ route('user.index') }}" aria-expanded="false">
+                                <i class="fa fa-users"></i>
+                                <span class="hide-menu">User</span>
+                            </a>
+                        </li>
                         <li> <a class="waves-effect waves-dark" href="{{ route('vaksin.index') }}"
                                 aria-expanded="false"><i class="fa fa-medkit"></i><span
                                     class="hide-menu">Vaksin</span></a>

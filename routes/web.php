@@ -38,6 +38,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
     Route::get('/',\App\Http\Controllers\Admin\DashboardController::class.'@index')->name('admin.index');
     Route::resource('vaksin',\App\Http\Controllers\Admin\VaksinController::class)->except(['show']);
     Route::resource('informasi',\App\Http\Controllers\Admin\InformasiController::class)->except(['show']);
+    Route::resource('user',\App\Http\Controllers\Admin\UserController::class)->except(['show']);
     Route::resource('quiz',\App\Http\Controllers\Admin\QuizController::class)->except(['show']);
     Route::get('/curhat',\App\Http\Controllers\Admin\CurhatController::class.'@index')->name('admin.curhat.index');
 });
